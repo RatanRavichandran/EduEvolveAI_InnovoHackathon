@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talk to your notes </title>
+    <link rel="stylesheet" href="C:/Users/Ratan/Desktop/try/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>.gradient {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(334deg,  hsl(98 100% 62%),  hsl(204 100% 59%));
+        background-size: 180% 180%;
+        animation: gradient-animation 4s ease infinite;
+    }
+    
+    @keyframes gradient-animation {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    } 
+    
+    
+    article {
+        background: linear-gradient(
+          to right, 
+          hsl(98 100% 62%), 
+          hsl(204 100% 59%)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+      }
+      
+      h1 {
+        line-height: 1.6;
+      }
+      
+        #gradient_heading {
+    
+        min-block-size: 100%;
+        min-inline-size: 100%;
+        box-sizing: border-box;
+        display: grid;
+        place-content: center;
+        font-family: system-ui;
+        font-size: min(500%, 30vmin);
+      }
+    /* nav bar */
+    
+    .header {
+        background-color: #000000;
+        padding: 30px;
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+    <div class="gradient" style="height: 1000px;">
+    <div class="header">
+        <article>
+            <p><br/></p>
+            <h1 id="gradient_heading">Talk to your notes</h1>
+            <p><br/></p>
+          </article>
+      </div>
+    <br>
+    <h1 style="margin-left: 2% ;">Talk to Notes</h1>
+    <br>
+    <h1 style="margin-left: 2%;">Ask any question</h1>
+    <br>
+    <form method="POST" style="margin-left: 2% ;">
+        <label style="margin-left: 2%;" for="question">Your Question:</label>
+        <br>
+        <textarea style="margin-left: 2%;" id="question" name="question" rows="4" cols="50"></textarea>
+        <br>
+        <input style="margin-left: 2%;" type="submit" value="Ask">
+    </form>
+    {% if question %}
+    <h2 style="margin-left: 2%;">Answer:</h2>
+    <p style="margin-left: 2%;">{{ answer }}</p>
+    {% endif %}
+    {% if message %}
+    <p style="margin-left: 2%;">{{ message }}</p>
+    {% endif %}
+
+    </div>
+</body>
+</html>
